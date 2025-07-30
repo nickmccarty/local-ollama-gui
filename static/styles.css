@@ -1,10 +1,14 @@
+/* General Reset and Layout */
 body {
   background: #e0e0e0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 2rem;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  color: #333;
 }
 
 .container {
@@ -15,39 +19,96 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 2rem;
+  font-weight: 600;
 }
 
-.neu-card {
-  background: #e0e0e0;
-  border-radius: 20px;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+/* Reset box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-textarea, select, button {
+/* Text Area Styles */
+textarea {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.75rem 1rem;
   margin-top: 0.5rem;
   font-size: 1rem;
-  border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   background: #e0e0e0;
-  box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+  box-shadow: inset 4px 4px 6px #bebebe, inset -4px -4px 6px #ffffff;
+  border: none;
+  outline: none;
   resize: vertical;
+  overflow-y: auto;
+  transition: box-shadow 0.2s ease;
 }
 
+textarea:focus {
+  box-shadow: inset 2px 2px 4px #bebebe, inset -2px -2px 4px #ffffff;
+}
+
+/* Button Styles */
 button {
+  width: 100%;
+  padding: 0.75rem 1rem;
   margin-top: 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  background: #e0e0e0;
+  box-shadow: 4px 4px 6px #bebebe, -4px -4px 6px #ffffff;
+  border: none;
+  outline: none;
   cursor: pointer;
-  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
-  transition: all 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
 }
 
 button:hover {
-  box-shadow: inset 2px 2px 6px #bebebe, inset -2px -2px 6px #ffffff;
+  box-shadow: inset 2px 2px 4px #bebebe, inset -2px -2px 4px #ffffff;
+  transform: translateY(1px);
 }
 
+button:active {
+  box-shadow: inset 1px 1px 2px #bebebe, inset -1px -1px 2px #ffffff;
+  transform: translateY(2px);
+}
+
+/* Neu Card Styles */
+.neu-card {
+  background: #e0e0e0;
+  border-radius: 20px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
+}
+
+/* Response Box Styles */
 .response-box p {
   white-space: pre-wrap;
+  margin: 0;
+  line-height: 1.5;
+}
+
+select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  outline: none;
+  appearance: none; /* Hide native arrow */
+  box-shadow: inset 4px 4px 6px #bebebe, inset -4px -4px 6px #ffffff;
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+}
+
+select:focus {
+  box-shadow: inset 2px 2px 4px #bebebe, inset -2px -2px 4px #ffffff;
 }
