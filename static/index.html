@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neumorphic AI UI</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 AI Prompt Generator</h1>
+
+    <div class="neu-card">
+      <label for="model">Model:</label>
+      <select id="model"></select>
+    </div>
+
+    <div class="neu-card">
+      <textarea id="prompt" placeholder="Type your prompt..."></textarea>
+      <button id="generate">Generate</button>
+    </div>
+
+    <div class="neu-card response-box" id="responseBox" hidden>
+      <h3>AI Response:</h3>
+      <p id="responseText"></p>
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
