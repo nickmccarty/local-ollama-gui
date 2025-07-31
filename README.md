@@ -205,7 +205,7 @@ uvicorn main:app --host 0.0.0.0 --port 8000
 - **Ollama Server:** The Ollama server must be running (either via Docker or `ollama serve`) before starting the FastAPI application.
 - **Static Files:** The app serves static files from the `static` directory. Make sure this folder exists and contains `index.html`, `styles.css`, and `script.js`.
 - **Model Support:** The app currently defaults to `"llama3"` if no model is specified.
-- **Multimodal Models:** The frontend and backend recognize certain models as multimodal (support image input), e.g., `"gpt-4-vision"`, `"llava"`.
+- **Multimodal Models:** The frontend and backend recognize certain models as multimodal (support image input), e.g., `"llama3.2-vision"`.
 - **Temporary Files:** Uploaded images are temporarily saved on disk and deleted after use.
 - **CORS:** The backend allows all origins, intended for development only. Adjust CORS settings for production.
 - **Error Handling:** The app logs errors and provides HTTP error responses when calls to the Ollama API fail.
