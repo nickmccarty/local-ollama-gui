@@ -183,7 +183,7 @@ uvicorn main:app --host 0.0.0.0 --port 8000
 
 1. Select the AI model from dropdown (models loaded dynamically).
 2. Enter text prompt in the textarea.
-3. If model supports multimodal input (e.g. `"gpt-4-vision"`, `"llava"`, etc.), upload an image or file.
+3. If model supports multimodal input (e.g. `"llama3.2-vision"`, etc.), upload an image or file.
 4. Click **Submit** to generate the response.
 5. View the AI's generated response below the form.
 
