@@ -61,6 +61,7 @@ generateBtn.addEventListener("click", async () => {
     let res;
 
     if (isMultimodal) {
+      console.log('Making multimodal request with:', { prompt: prompt.substring(0, 50), model, fileName: file.name });
       const formData = new FormData();
       formData.append("prompt", prompt);
       formData.append("model", model);
@@ -80,7 +81,8 @@ generateBtn.addEventListener("click", async () => {
 
     if (!res.ok) {
       const errorText = await res.text();
-      throw new Error(`Server error: ${errorText}`);
+      console.error(`HTTP ${res.status} ${res.statusText}:`, errorText);
+      throw new Error(`HTTP ${res.status} ${res.statusText}: ${errorText}`);
     }
 
     const data = await res.json();
